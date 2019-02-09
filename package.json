@@ -1,0 +1,35 @@
+{
+  "name": "apollo-server-ts-lambda",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon -e ts,graphql --ignore tmp/**/* --exec ts-node ./index.ts",
+    "clean": "rm -rf dist",
+    "lint": "tslint -c tslint.json './**/*.ts' -t stylish",
+    "test": "npm run lint && jest --colors",
+    "test-watch": "jest --watch --colors",
+    "build": "NODE_ENV=production ncc build index.ts -o dist -m",
+    "deploy": "npm run clean && npm run build && npx serverless deploy",
+    "fmt:ts": "prettier --parser typescript --write \"./**/*.ts\"",
+    "fmt:graphql": "prettier --parser graphql --write \"./**/*.graphql\"",
+    "fmt": "npm run fmt:ts"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "UNLICENSED",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.19",
+    "@types/graphql": "^14.0.5",
+    "@types/node": "^10.12.24",
+    "@zeit/ncc": "^0.14.0",
+    "apollo-server-lambda": "^2.4.0",
+    "graphql": "^14.1.1",
+    "nodemon": "^1.18.10",
+    "prettier": "^1.16.4",
+    "ts-node": "^8.0.2",
+    "tslint": "^5.12.1",
+    "tslint-config-prettier": "^1.18.0",
+    "typescript": "^3.3.3"
+  }
+}
