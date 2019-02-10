@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "nodemon -e ts,graphql --ignore tmp/**/* --exec 'ncc build index.ts -o dist'",
-    "start": "concurrently -n build,serverless-offline -c blue,yellow \"npm run dev\"  \"serverless offline\"",
+    "start": "concurrently -n build,serverless-offline -c blue,yellow \"npm run dev\"  \"serverless offline --skipCacheInvalidation\"",
     "clean": "rm -rf dist",
     "lint": "tslint -c tslint.json './**/*.ts' -t stylish",
     "test": "npm run lint && jest --colors",
