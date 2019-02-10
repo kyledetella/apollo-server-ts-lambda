@@ -13,3 +13,8 @@ functions:
         path: graphql
         method: post
         cors: true
+plugins:
+  - serverless-offline
+custom:
+  serverless-offline:
+    port: 4444

@@ -15,7 +15,9 @@ const typeDefs = gql`
 const resolvers = {
   Query: {
     ping: () => ({
-      message: "__FOO__",
+      message: "Anythinjhasbdjhbg",
+
+      meta: "...ss",
       time: Date.now()
     })
   }

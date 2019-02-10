@@ -12,6 +12,16 @@ This follows [this guide](https://www.apollographql.com/docs/apollo-server/deplo
 nvm use && npm i
 ```
 
+### Testing locally
+
+This project uses [serverless-offline](https://github.com/dherault/serverless-offline) to emulate API Gateway and Lambda functionality.
+
+```bash
+$ npm start
+```
+
+The GraphQL API will then be available at http://localhost:4444/graphql.
+
 ## Deployment
 
 ```bash
